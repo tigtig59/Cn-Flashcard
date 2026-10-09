@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@700&family=Noto+Sans+Thai:wght@400;600&display=swap" rel="stylesheet">
+<title>flash card ศัพท์จีน</title>
+<style>
+:root{--bg:#f9e4e1;--bg2:#f3d2cd;--card:#fff9f5;--ink:#4a1f1d;--mute:#9a6762;--red:#c8453d;--red2:#a82e2a;--gold:#c9973f;--line:#e5b5b0;--ok:#3f7d58}
+@media (prefers-color-scheme:dark){:root{--bg:#2a1213;--bg2:#341819;--card:#3b1c1d;--ink:#f6e4df;--mute:#c49a94;--red:#ef7a70;--red2:#f08d84;--gold:#e0b25a;--line:#6b3a3a;--ok:#7ccf9a}}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:var(--ink);font-family:"Noto Sans Thai","Sarabun",system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;padding:20px 16px;background-color:var(--bg);background-image:linear-gradient(var(--bg2) 1px,transparent 1px),linear-gradient(90deg,var(--bg2) 1px,transparent 1px);background-size:28px 28px}
+.title{display:flex;align-items:center;gap:12px;margin:4px 0 18px;font-size:1.5rem;font-weight:600;color:var(--red2);letter-spacing:.04em}
+.seal{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;background:var(--red);color:#fff9f5;font-family:"Noto Serif SC","Songti SC",serif;font-size:1.5rem;border-radius:6px;transform:rotate(-4deg);box-shadow:0 2px 0 var(--red2)}
+.top{width:100%;max-width:520px;display:flex;justify-content:space-between;align-items:center;color:var(--mute);font-size:.95rem;margin-bottom:14px}
+.top label{display:flex;gap:6px;align-items:center;cursor:pointer;accent-color:var(--red)}
+.card{width:100%;max-width:520px;height:340px;perspective:1000px;cursor:pointer;border:0;background:none;padding:0;color:inherit;font:inherit}
+.card:focus-visible{outline:3px solid var(--gold);outline-offset:4px;border-radius:14px}
+.inner{position:relative;width:100%;height:100%;transition:transform .45s;transform-style:preserve-3d}
+.card.flip .inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;background:var(--card);border:2px solid var(--red);border-radius:12px;box-shadow:inset 0 0 0 6px var(--card),inset 0 0 0 7px var(--gold),0 6px 18px rgba(168,46,42,.18);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px;text-align:center}
+.back{transform:rotateY(180deg)}
+.hanzi{font-family:"Noto Serif SC","Songti SC","SimSun",serif;font-weight:700;color:var(--red2);font-size:clamp(3.5rem,18vw,6.5rem);line-height:1.15;word-break:break-all}
+.pinyin{font-size:1.9rem;color:var(--red);margin-bottom:10px}
+.mean{font-size:1.6rem}
+.hint{position:absolute;bottom:18px;font-size:.85rem;color:var(--mute)}
+.mark{position:absolute;top:18px;right:20px;width:14px;height:14px;border-radius:3px;background:var(--red);transform:rotate(-4deg)}
+.mark.ok{background:var(--ok)}
+.row{display:flex;gap:10px;margin-top:18px;width:100%;max-width:520px}
+button.b{flex:1;padding:13px 8px;font:inherit;font-size:1rem;border-radius:10px;border:1.5px solid var(--red);background:var(--card);color:var(--red2);cursor:pointer;transition:background .15s,color .15s}
+button.b:hover{background:var(--red);color:#fff9f5}
+button.b:focus-visible{outline:3px solid var(--gold)}
+button.b.no{color:var(--red2)}
+button.b.yes{color:var(--ok);border-color:var(--ok)}
+button.b.yes:hover{background:var(--ok);color:#fff9f5}
+#msg{margin-top:40px;color:var(--mute);text-align:center}
+@media (prefers-reduced-motion:reduce){.inner,button.b{transition:none}}
+.pandaS{width:46px;height:51px}
+.foot{display:flex;align-items:flex-end;justify-content:center;gap:6px;margin-top:26px}
+.pandaL{width:130px;height:145px;transform-origin:50% 100%;animation:sway 4s ease-in-out infinite}
+.bam{width:44px;height:94px}.bam.b2{height:70px;transform:scaleX(-1)}
+@keyframes sway{50%{transform:rotate(3deg)}}
+@media (prefers-reduced-motion:reduce){.pandaL{animation:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="panda" viewBox="0 0 120 134">
+<g stroke="#3a2a2a" stroke-width="2.5" stroke-linejoin="round">
+<circle cx="29" cy="24" r="14" fill="#3a2a2a"/><circle cx="91" cy="24" r="14" fill="#3a2a2a"/>
+<ellipse cx="60" cy="102" rx="36" ry="28" fill="#fff"/>
+<ellipse cx="27" cy="98" rx="10" ry="19" fill="#3a2a2a" transform="rotate(18 27 98)"/>
+<ellipse cx="93" cy="98" rx="10" ry="19" fill="#3a2a2a" transform="rotate(-18 93 98)"/>
+<ellipse cx="42" cy="126" rx="13" ry="8" fill="#3a2a2a"/><ellipse cx="78" cy="126" rx="13" ry="8" fill="#3a2a2a"/>
+<ellipse cx="60" cy="56" rx="44" ry="38" fill="#fff"/>
+</g>
+<ellipse cx="41" cy="52" rx="10" ry="14" fill="#3a2a2a" transform="rotate(22 41 52)"/>
+<ellipse cx="79" cy="52" rx="10" ry="14" fill="#3a2a2a" transform="rotate(-22 79 52)"/>
+<circle cx="43" cy="50" r="4.5" fill="#fff"/><circle cx="77" cy="50" r="4.5" fill="#fff"/>
+<circle cx="43.5" cy="50.5" r="2.6" fill="#3a2a2a"/><circle cx="76.5" cy="50.5" r="2.6" fill="#3a2a2a"/>
+<circle cx="44.3" cy="49.5" r=".9" fill="#fff"/><circle cx="77.3" cy="49.5" r=".9" fill="#fff"/>
+<circle cx="29" cy="68" r="6.5" fill="#f2a5a0" opacity=".65"/><circle cx="91" cy="68" r="6.5" fill="#f2a5a0" opacity=".65"/>
+<ellipse cx="60" cy="65" rx="6.5" ry="4.2" fill="#3a2a2a"/>
+<path d="M53 73q3.500 6 7 0q3.500 6 7 0" fill="none" stroke="#3a2a2a" stroke-width="2.2" stroke-linecap="round"/>
+</symbol>
+<symbol id="bamboo" viewBox="0 0 70 150">
+<g fill="#6fa86b" stroke="#3f7a4a" stroke-width="2">
+<rect x="14" y="4" width="10" height="142" rx="3"/><rect x="40" y="26" width="10" height="120" rx="3"/>
+</g>
+<g stroke="#3f7a4a" stroke-width="2.5" stroke-linecap="round"><path d="M13 46h12M13 92h12M39 62h12M39 108h12"/></g>
+<g fill="#8cc58a" stroke="#3f7a4a" stroke-width="1.5"><path d="M24 36q22-4 36-22q-20 0-36 22z"/><path d="M14 70q-10-6-12-22q14 4 12 22z"/><path d="M50 56q14-2 18-16q-14 0-18 16z"/></g>
+</symbol></defs></svg>
+<h1 class="title"><span class="seal">汉</span>เรียนศัพท์จีน<svg class="pandaS" viewBox="0 0 120 134" role="img" aria-label="หมีแพนด้า"><use href="#panda"/></svg></h1>
+<div class="top"><span id="count">กำลังโหลด…</span><label><input type="checkbox" id="onlyNew"> เฉพาะคำที่ยังไม่จำ</label></div>
+<button class="card" id="card" aria-label="พลิกการ์ด" hidden>
+  <div class="inner">
+    <div class="face front"><span class="mark" id="mark"></span><div class="hanzi" id="hz"></div><span class="hint">แตะเพื่อดูคำอ่านและคำแปล</span></div>
+    <div class="face back"><div class="pinyin" id="py"></div><div id="th" style="color:var(--mute);margin:-4px 0 14px"></div><div class="mean" id="mn"></div></div>
+  </div>
+</button>
+<div class="row" id="r1" hidden>
+  <button class="b" id="prev">ย้อนกลับ</button>
+  <button class="b" id="speak">ฟังเสียง</button>
+  <button class="b" id="next">ถัดไป</button>
+</div>
+<div class="row" id="r2" hidden>
+  <button class="b no" id="no">ยังไม่จำ</button>
+  <button class="b" id="shuf">สุ่ม</button>
+  <button class="b yes" id="ok">จำได้</button>
+</div>
+<div id="note" style="margin-top:14px;color:var(--mute);font-size:.85rem;text-align:center"></div>
+<div id="msg"></div>
+
+<div class="foot" aria-hidden="true"><svg class="bam" viewBox="0 0 70 150"><use href="#bamboo"/></svg><svg class="pandaL" viewBox="0 0 120 134"><use href="#panda"/></svg><svg class="bam b2" viewBox="0 0 70 150"><use href="#bamboo"/></svg></div>
+<script>
+// วางลิงก์ CSV ที่ได้จาก Google Sheet ตรงนี้
+const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRy6A3HT6Fl9LXYeSfcqP1tOO3fTPGNeXfauneDSKWaAkMcUbR4zwn7MDQ0n2bpy1IQ8_S8qz_HQ53y/pub?gid=0&single=true&output=csv";
+
+const BACKUP = `ลำดับที่,คำศัพท์,คำอ่าน,คำแปล
+1,你,nǐ (หนี่),คุณ เธอ
+2,我,wǒ (หว่อ),ฉัน
+3,他,tā (ทา),เขา (ผู้ชาย)
+4,她,tā (ทา),เขา (ผู้หญิง)
+5,它,tā (ทา),มัน (สรรพนามใช้เรียกแทน สัตว์ หรือ สิ่งของ)
+6,你们,nǐmen (หนี่ เมิน),พวกคุณ พวกเธอ
+7,我们,women (หว่อ เมิน),พวกฉัน พวกเรา
+8,他们,tāmen (ทา เมิน),พวกเขา
+9,她们,tāmen (ทา เมิน),พวกหล่อน
+10,大家,dàjiā (ต้า เจีย),ทุกคน
+11,周末,zhōumò (โจว ม่อ),สุดสัปดาห์
+12,你好,nǐhǎo (หนี่ ห่าว),สวัสดี
+13,谢谢,xièxie (เซี่ยะ เซียะ),ขอบคุณ
+14,再见,zàijiàn (ไจ้ เจี้ยน),แล้วเจอกันใหม่ ลาก่อน
+15,对不起,duìbùqǐ (ตุ้ย ปู้ ฉี่),ขอโทษ
+16,没关系,méiguānxi (เหมย กวาน สิ),ไม่เป็นไร
+17,不客气,bùkèqi (ปู๋ เค่อ ฉิ),ไม่ต้องเกรงใจ
+18,好,hǎo (ห่าว),ดี
+19,很,hěn (เหิ่น),มาก
+20,也,yě (เหย่),ก็ เช่นกัน เหมือนกัน
+21,都,dōu (โตว์),ล้วน ทั้งหมด
+22,是,shì (ซื่อ),เป็น อยู่ คือ ใช่
+23,不,bù (ปู้),ไม่
+24,没有,méiyou (เหมย โหย่ว),ไม่มี
+25,吗,ma (มะ),มั้ย ไหม
+26,什么,shénme (เสิ่น เหมอะ),อะไร
+27,这,zhè (เจ้อ),นี่ ที่นี่
+28,那,nà (น่า),นั่น
+29,哪,nǎ (หน่า),ไหน
+30,在,zài (ไจ้),ที่ อยู่ที่
+31,叫,jiao (เจี้ยว),เรียก
+32,名字,míngzi (หมิง จึ),ชื่อ
+33,呢,ne (เนอะ),ล่ะ
+34,人,rén (เหริน),คน
+35,吃,chī (ชือ),กิน รับประทาน
+36,喝,hē (เฮอ),ดื่ม
+37,看,kàn (คั่น),ดู มอง อ่าน
+38,去,qù (ชวี่),ไป
+39,来,lái (ไหล),มา
+40,做,zuò (จั้ว),ทำ
+41,坐,zuò (จั้ว),นั่ง โดยสาร
+42,欢迎,huānyíng (ฮวน อิ๋ง),ยินดีต้อนรับ
+43,喜欢,xǐhuān (สี่ ฮวน),ชอบ
+44,爱,ài (อ้าย),รัก
+45,玩儿,wánr (หวาน),เที่ยว เล่น
+46,地方,dìfāng (ตี้ ฟาง),สถานที่
+47,游客,yóukè (โหยว เค่อ),นักท่องเที่ยว
+48,导游,dǎoyóu (ต่าว โหยว),มัคคุเทศก์ ไกด์นำเที่ยว
+49,旅游,lǚyóu (ลวี่. โหยว),ท่องเที่ยว
+50,旅行,lǚxíng (ลวี่. สิง),ท่องเที่ยว
+51,风景,fēngjǐng (เฟิง จิ่ง),วิว ทิวทันศ์
+52,景点,jǐngdiǎn (จิ่ง เตี่ยน),แหล่งท่องเที่ยว
+53,有名,yǒumíng (โหย่ว หมิง),มีชื่อเสียง
+54,汽车,qìchē (ชี่ เชอ),รถยนต์
+55,飞机,fēijī (เฟย จี),เครื่องบิน
+56,公共汽车,gōnggòngqìchē (กง ก้ง ชี่ เชอ),รถเมล์ รถโดยสารสาธารณะ
+57,火车,huǒchē (หั่ว เชอ),รถไฟ
+58,自行车,zìxíngchē (จื้อ สิง เชอ),รถจักรยานยนตร์
+59,摩托车,mótuōchē (หมอ ทัว เชอ),มอเตอร์ไซต์
+60,骑,qí (ฉี),ขี่
+61,开车,kāichē (คาย เชอ),ขับรถ
+62,酒店,jiǔdiàn (จิ่ว เตี้ยน),โรงแรม
+63,饭店,fàndiàn (ฟ่าน เตี้ยน),ร้านอาหาร โรงแรม
+64,市场,shìchǎng (ซื่อ ฉ่าง),ตลาด
+65,商店,shāngdiàn (ซาง เตี้ยน),ร้านค้า
+66,餐厅,cānting (ชาน ทิง),ร้านอาหาร โรงอาหาร
+67,机场,jīchǎng (จี ฉ่าง),สนามบิน
+68,寺庙,sìmiào (ซื่อ เมี่ยว),วัด
+69,博物馆,bówùguǎn (ป๋อ วู่ ก่วน),พิพิธภัณฑ์
+70,纪念品,jìniànpǐn (จี้ เนี่ยน ผิน),ของที่ระลึก
+71,卖,mài (ม่าย),ขาย
+72,买,mǎi (หม่าย),ซื้อ
+73,有,yǒu (โหยว่),มี
+74,水果,shuǐguǒ (สุย กั่ว),ผลไม้
+75,泰国菜,Tàiguócài (ไท่ กั๋ว ไช่),อาหารไทย
+76,中国菜,Zhōngguócài (จง กั๋ว ไช่),อาหารจีน
+77,菜,cài (ไช่),อาหาร กับข้าว ผัก
+78,美食,měishí (เหม่ย สือ),อาหาร ของกินอร่อย
+79,甜点,tiándiǎn (เถียน เตี่ยน),ของหวาน ขนมหวาน
+80,小吃,xiǎochī (เสี่ยว ชือ),ของทานเล่น
+81,饮料,yǐnliào (อิ๋น เลี่ยว),เครื่องดื่ม
+82,水,shuǐ (สุ่ย),น้ำ
+83,咖啡,kāfēi (คา เฟย),กาแฟ
+84,茶,chá (ฉา),ชา
+85,牛奶,niúnǎi (หนิว หน่าย),นมวัว
+86,可乐,kělè (เข่อ เล่อ),โค้ก
+87,要,yào (เย้า),ต้อง ต้องการ
+88,需要,xūyào (ซวี เย้า),ต้องการ
+89,帮忙,bāngmáng (ปาง หมาง),ช่วยเหลือ
+90,想,xiǎng (เสี่ยง),อยากจะ คิดจะ
+91,试,shì (ซื่อ),ลอง
+92,尝,cháng (ฉาง),ชิม(ของกิน)
+93,逛街,guàngjiē (กว้าง เจียะ),เดินเที่ยว เดินช้อปปิ้ง
+94,有意思,yǒuyìsi (โหย่ว อี้ สึ),น่าสนใจ
+95,的,de (เตอะ),ของ
+96,参观,cānguān (ชัน กวาน),เยี่ยมชม
+97,怎么,zěnme (เจิ่น เมอะ),อย่างไร
+98,今天,jīntiān (จิน เทียน),วันนี้
+99,明天,míngtiān (หมิง เทียน),พรุ่งนี้
+100,打算,dǎsuàn (ต่า ส้วน),คิดจะ วางแผน ตั้งใจจะ`;
+
+const $ = id => document.getElementById(id);
+let all = [], list = [], i = 0;
+let known = {};
+try { known = JSON.parse(localStorage.getItem("known") || "{}"); } catch(e) {}
+const save = () => { try { localStorage.setItem("known", JSON.stringify(known)); } catch(e) {} };
+
+function parseCSV(t){
+  const rows=[]; let r=[], c="", q=false;
+  for(let k=0;k<t.length;k++){
+    const ch=t[k];
+    if(q){ if(ch=='"'){ if(t[k+1]=='"'){c+='"';k++;} else q=false; } else c+=ch; }
+    else if(ch=='"') q=true;
+    else if(ch==","){ r.push(c); c=""; }
+    else if(ch=="\n"||ch=="\r"){ if(ch=="\r"&&t[k+1]=="\n")k++; r.push(c); rows.push(r); r=[]; c=""; }
+    else c+=ch;
+  }
+  if(c!==""||r.length){ r.push(c); rows.push(r); }
+  return rows;
+}
+
+function build(){
+  const only = $("onlyNew").checked;
+  list = only ? all.filter(w => !known[w.hz]) : all.slice();
+  i = Math.min(i, Math.max(list.length-1, 0));
+  show();
+}
+
+function show(){
+  $("card").classList.remove("flip");
+  if(!list.length){
+    $("card").hidden = $("r1").hidden = $("r2").hidden = true;
+    $("msg").textContent = "ไม่มีคำให้ทบทวนแล้ว ปิดตัวเลือก \"เฉพาะคำที่ยังไม่จำ\" เพื่อดูทั้งหมด";
+    $("count").textContent = "0 คำ"; return;
+  }
+  $("msg").textContent = "";
+  $("card").hidden = $("r1").hidden = $("r2").hidden = false;
+  const w = list[i];
+  $("hz").textContent = w.hz; const m = w.py.match(/^(.*?)\s*\((.*)\)\s*$/);
+  $("py").textContent = m ? m[1] : w.py; $("th").textContent = m ? m[2] : ""; $("mn").textContent = w.mn;
+  $("mark").className = "mark" + (known[w.hz] ? " ok" : "");
+  $("count").textContent = `${i+1} / ${list.length}  (จำได้ ${Object.keys(known).filter(k=>all.some(w=>w.hz===k)).length}/${all.length})`;
+}
+
+const go = d => { if(!list.length) return; i = (i + d + list.length) % list.length; show(); };
+$("card").onclick = () => $("card").classList.toggle("flip");
+$("next").onclick = () => go(1);
+$("prev").onclick = () => go(-1);
+$("shuf").onclick = () => { i = Math.floor(Math.random()*list.length); show(); };
+$("onlyNew").onchange = build;
+$("ok").onclick = () => { known[list[i].hz] = 1; save(); $("onlyNew").checked ? build() : go(1); };
+$("no").onclick = () => { delete known[list[i].hz]; save(); go(1); };
+$("speak").onclick = () => {
+  if(!("speechSynthesis" in window)) return;
+  const u = new SpeechSynthesisUtterance(list[i].hz); u.lang = "zh-CN"; u.rate = .8;
+  speechSynthesis.cancel(); speechSynthesis.speak(u);
+};
+document.addEventListener("keydown", e => {
+  if(e.key=="ArrowRight") go(1);
+  else if(e.key=="ArrowLeft") go(-1);
+  else if(e.key==" "){ e.preventDefault(); $("card").classList.toggle("flip"); }
+});
+
+function init(t){
+  const rows = parseCSV(t).filter(r => r.some(x => x.trim()));
+  const h = rows.shift().map(x => x.trim());
+  const ix = (name, fb) => { const n = h.indexOf(name); return n >= 0 ? n : fb; };
+  const a = ix("คำศัพท์",1), b = ix("คำอ่าน",2), c = ix("คำแปล",3);
+  all = rows.map(r => ({hz:(r[a]||"").trim(), py:(r[b]||"").trim(), mn:(r[c]||"").trim()})).filter(w => w.hz);
+  build();
+}
+fetch(CSV_URL).then(r => { if(!r.ok) throw new Error("HTTP "+r.status); return r.text(); }).then(init).catch(err => {
+  try { init(BACKUP); $("note").textContent = "แสดงข้อมูลสำรองที่ฝังในไฟล์ (เชื่อม Google Sheets ไม่ได้)"; return; } catch(e) {}
+  $("count").textContent = "";
+  const why = !CSV_URL.startsWith("http") ? "ยังไม่ได้ใส่ลิงก์ CSV ในไฟล์ (CSV_URL)"
+    : location.protocol === "file:" ? "เปิดไฟล์จากเครื่องโดยตรง ลองอัปโหลดขึ้นเว็บ (เช่น Netlify Drop) แล้วเปิดผ่านลิงก์"
+    : "เบราว์เซอร์เชื่อมต่อ Google Sheets ไม่ได้";
+  $("msg").textContent = "โหลดคำศัพท์ไม่ได้: " + why + " [" + (err && err.message ? err.message : "error") + "]";
+});
+</script>
+</body>
+</html>
